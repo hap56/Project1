@@ -30,3 +30,19 @@ class Csv_fetcher
 		}
 	}
 }
+
+abstract class Webpage 
+{
+	protected $a;
+	public function __construct()
+	{
+		$this->a .= '<html>';
+		$this->a .='<body>';
+	}
+	public function __destruct()
+	{
+		$this->a .= '</body></html>';
+		Stringfunction::printThis($this->a);
+	}
+}
+?>
