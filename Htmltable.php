@@ -1,7 +1,7 @@
 <?php
  class Htmltable extends page 
 {
-  public function Get()
+  public static function Get()
  {
     $row = 1;
     if (($file = fopen($_GET['filename'], "r" )) !== false ) 

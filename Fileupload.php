@@ -5,8 +5,8 @@ class Fileupload extends page
 	{
 		$form = '<form method="Post" enctype="multipart/form-data">';
 		$form .= '<input type="file" name="fileToUpload" id="fileToUpload">';
-		$form .= '<input type="submit value="Upload CSV File" name="submit">';
-		$form .= '</form>';
+		$form .= '<input type="submit" value="Upload CSV File" name="submit">';
+		$form .= '</form> ';
 		$this->a .= '<h1>Upload File</h1>';
 		$this->a .= $form;
 	}
@@ -14,16 +14,16 @@ class Fileupload extends page
 	{
 		$csvfile_store = "upload/";
 		$csv_file = $csvfile_store . basename($_FILES["fileToUpload"]["name"]);
-		$Filetype = pathinfo($csv_file,PATHINFO_EXTENSION);
-		if($FileType != "csv")
-		{
-			echo "Sorry, only CSV files are allowed.";
-		}
+		$FileType = pathinfo($csv_file,PATHINFO_EXTENSION);
+			if($FileType!= "csv")	
+			{
+			  echo "Sorry, only CSV files are allowed.";
+		    }
 		else
 		{
 			$FileName = pathinfo($csv_file, PATHINFO_BASENAME);
-			move_uploaded_files($_FILES["fileToUpload"]["tmp_name"], $csv_file);
-			header('Location: index.php?page=htmlTable&filename='.$csv_file);
+			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $csv_file);
+			header('Location: index.php?page=Htmltable&filename='.$csv_file);
 		}
 	}
 }

@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
 
 class Forautoloading
 {
@@ -14,7 +16,7 @@ class Csv_fetcher
 {
 	public function __construct()
 	{
-		$pageRequest = 'fileupload';
+		$pageRequest = 'Fileupload';
 		if(isset($_REQUEST['page']))
 		{
 			$pageRequest = $_REQUEST['page'];
@@ -31,7 +33,7 @@ class Csv_fetcher
 	}
 }
 
-abstract class Webpage 
+abstract class page 
 {
 	protected $a;
 	public function __construct()
