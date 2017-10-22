@@ -1,6 +1,7 @@
 <?php
  class Htmltable extends page 
 {
+  //converting the dynamically accessed csv file to html table.
   public static function Get()
  {
     $row = 1;
